@@ -38,6 +38,8 @@ public class Robot extends TimedRobot {
     m_chooser.addOption("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
 
+    System.out.println("--robotInit--NAVX(firmware version): " + mNavx.getFirmwareVersion() + " ------");
+    
     System.out.println("--robotInit--NAVX(calibrating,conected): " + mNavx.isCalibrating() + " , " + mNavx.isConnected() + " ------");
     //Timer.delay(5);
     mNavx.calibrate();
