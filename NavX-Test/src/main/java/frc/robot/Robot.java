@@ -9,7 +9,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.I2C.Port;
+//import edu.wpi.first.wpilibj.I2C.Port;
+import edu.wpi.first.wpilibj.SPI;
 import com.kauailabs.navx.frc.AHRS;
 
 /**
@@ -23,7 +24,10 @@ public class Robot extends TimedRobot {
   private static final String kCustomAuto = "My Auto";
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
-  private final AHRS mNavx = new AHRS(Port.kMXP);
+
+  // Uncomment ony the corresponding import above.
+  //  private final AHRS mNavx = new AHRS(Port.kMXP);
+  private final AHRS mNavx = new AHRS(SPI.Port.kMXP);
 
   final int periodCounts = 50;
   int count = periodCounts;
